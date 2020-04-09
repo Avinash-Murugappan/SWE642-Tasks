@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+border: 1px solid black;
+ 
+}
+
+.required:after { content:" *"; }
+
+h1 { 
+ color: blue;
+ text-shadow: 2px 2px #000000;
+}
+
+div{
+ background-color: lightgrey;
+ border: 5px solid blue;
+ }
+ 
+ body {
+  background-color: lightgrey;
+}
+img.gmuimg {
+position:fixed;
+right: 70px;
+bottom: 0px;
+top: 679px;
+
+}
+ 
+</style>
+</head>
+<body>
+<header>
+<h1 align="center" >CS Department Survey</h1>
+</header>
+<div class="conatiner">
+        <section id="index-link">
+            <p>
+                <em id="greeting"></em>
+            </p>
+            </section>
+        <section id="survey">
+<table>
+<tr>
+  <form autocomplete="on" method="post" onreset="resetForm();">
+ <td class=> Username
+   <input id="username" type="text" required autofocus />
+  <br><br></td> </tr>
+  <tr><td>Street Address:
+  <input id="address" type="text" required name="streetaddress" placeholder="Enter your address"> 
+  <br><br>
+  city:
+  <input id="city" type="text" >
+  <br><br>
+  state:
+   <input id="state" type="text" >
+  <br><br>
+  zip:
+   <input id="zipcode" type="number" pattern="^\d{5}(?:[-\s]\d{4})?$" onblur="validateZip(this.value);"/>
+ <br />
+  <label id="zipcode-error" class="error"></label>
+  <br><br></td>
+  <td>Phone:
+  <input id="telephone" type="tel" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
+                                    placeholder="(xxx) xxx-xxxx" />
+  <br><br>
+  Email:*
+ <input id="email" type="email" required placeholder="username@host.com" />
+  <br><br>
+  URL:
+  <input type="URL name="url">
+  <br><br></td>
+  
+ <tr><td> Date Of Survey:*
+  <input id="date" type="date" name="dos" required>
+  <br><br></td>
+  <td> 
+<p1> High school graduation month: <p1>
+<input id="grad_month" list="GM" name="Graduaiton" placeholder="Select a month">
+  <datalist id="GM">
+    <option value="January">
+    <option value="February">
+    <option value="March">
+    <option value="April">
+    <option value="May">
+    <option value="June">
+    <option value="July">
+    <option value="August">
+    <option value="September">
+    <option value="October">
+    <option value="November">
+    <option value="December">
+  </datalist></td></tr>
+  
+  <tr><td><h4> If prospective students,<br>Answer the following: </h4>
+  <p1>Most liked about the campus: </p1><br>
+  <input type="checkbox" name="likes" value="0" > Students<br>
+  <input type="checkbox" name="likes" value="1"> Location<br>
+  <input type="checkbox" name="likes" value="2"> Campus<br>
+  <input type="checkbox" name="likes" value="3"> Atmosphere<br>
+  <input type="checkbox" name="likes" value="4"> Dorm Romms<br>
+  <input type="checkbox" name="likes" value="5"> Sports<br><br> 
+  
+  <p1> Personal interest for the university: </p1><br>
+    <input type="radio" name="interest" value="0" required/> Friends<br>
+  <input type="radio" name="interest"   value="1" required/> Television<br>
+  <input type="radio" name="interest"   value="2" required/> Internet<br> 
+  <input type="radio" name="interest"   value="3" required/> Others<br><br>
+  
+   <p1> Likelihood of recommending this school : <p1> <br>
+   <select id="recommend>
+  <option value="">Select One</option>
+  <option value="0">Verylikely</option>
+  <option value="1">Likely</option>
+  <option value="2">Unlikely</option>
+</select> <br><br></td>
+  
+  <td>
+  <p1> Additional comments:<p1> <br>
+  <textarea rows="18" cols="52">
+  </textarea> <br><br></td></tr>
+
+  </tr>
+  </table><br>
+  <fieldset>
+                    <legend>Extension</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Data</label>
+                            </td>
+                            <td>
+                                <input id="data" type="text" onblur="calc(this.value);" placeholder="1,2,3,4,5,6,7,8,9,10"/>
+                                <br />
+                                <label id="data-error" class="error"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Average</label>
+                            </td>
+                            <td>
+                                <label id="average"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Maximum</label>
+                            </td>
+                            <td>
+                                <label id="maximum"></label>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+</form>
+ </section>
+    </div>
+<input type="submit" onclick="validateForm(event);" value="Submit" />
+<input id="resetForm" onclick="resetForm();" type="reset" value="Reset" />
+ <br> 
+<a href="https://www2.gmu.edu/">
+  <img width="100px" height="100px"class="gmuimg" src="http://mason.gmu.edu/~aarunach/GMU_logo.png" alt="GMU Logo" align="right" title="Please visit www.gmu.edu for more information."
+href="https://www2.gmu.edu/" >
+</a>
+
+</body>
+<script src="http://mason.gmu.edu/~aarunach/scripts.js"></script>
+<script type="text/javascript">
+    greet();
+ </script>
+ <script>
+  $(".gmuimg").tooltip({
+        content: function () {
+            return $(this).prop('title');
+        }
+    });
+    </script>
+</html>
+<!-- Arunachalachettiar Murugappan -->
